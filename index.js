@@ -22,11 +22,20 @@ module.exports = {
 
   'rules': {
 
-    'strict': [0, 'never'],
+    // -----------------------------------------------------------------------------
+    // ESLINT:RECOMMENDED OVERRIDES
+    // -----------------------------------------------------------------------------
 
     // possible errors -------------------------------------------------------------
     'comma-dangle': 0,
     'no-console': 0,
+
+    // stylistic issues ------------------------------------------------------------
+    'no-mixed-spaces-and-tabs': [2, false],
+
+    // -----------------------------------------------------------------------------
+    // ADDITIONAL RULES
+    // -----------------------------------------------------------------------------
 
     // best practices --------------------------------------------------------------
     'consistent-return': 2,
@@ -38,7 +47,6 @@ module.exports = {
     'no-eval': 2,
     'no-extend-native': 2,
     'no-extra-bind': 2,
-    'no-fallthrough': 2,
     'no-implied-eval': 2,
     'no-iterator': 2,
     'no-labels': 2,
@@ -50,10 +58,8 @@ module.exports = {
     'no-new': 2,
     'no-new-func': 2,
     'no-new-wrappers': 2,
-    'no-octal': 2,
     'no-octal-escape': 2,
     'no-proto': 2,
-    'no-redeclare': 2,
     'no-return-assign': 2,
     'no-script-url': 2,
     'no-sequences': 2,
@@ -62,20 +68,16 @@ module.exports = {
     'yoda': [2, 'never'],
 
     // variables -------------------------------------------------------------------
-    'no-delete-var': 2,
     'no-label-var': 2,
     'no-shadow': 2,
     'no-shadow-restricted-names': 2,
-    'no-undef': 2,
     'no-undef-init': 2,
-    'no-unused-vars': [2, {'vars': 'all', 'args': 'after-used'}],
     'no-use-before-define': 2,
 
     // nodejs ----------------------------------------------------------------------
     'no-process-exit': 2,
 
     // stylistic issues ------------------------------------------------------------
-    'camelcase': 0,
     'comma-spacing': 2,
     'eol-last': 2,
     'indent': [2, 2],
@@ -85,7 +87,6 @@ module.exports = {
     'new-cap': 0,
     'new-parens': 2,
     'no-array-constructor': 2,
-    'no-mixed-spaces-and-tabs': [2, false],
     'no-new-object': 2,
     'no-spaced-func': 2,
     'no-trailing-spaces': 2,
@@ -95,9 +96,6 @@ module.exports = {
     'semi-spacing': [2, {'before': false, 'after': true}],
     'space-infix-ops': 2,
     'space-unary-ops': [2, {'words': true, 'nonwords': false}],
-
-    // ES6 -------------------------------------------------------------------------
-    // n/a
 
     // -----------------------------------------------------------------------------
     // PLUGINS
