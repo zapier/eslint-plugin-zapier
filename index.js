@@ -115,6 +115,6 @@ module.exports = {
     'react/jsx-uses-react': 2,
 
     // no-console-log plugin -------------------------------------------------------
-    'no-console-log/no-console-log': 2
+    // 'no-console-log/no-console-log': 2
   }
 };
