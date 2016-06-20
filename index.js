@@ -79,6 +79,7 @@ module.exports = {
     'comma-spacing': 2,
     'eol-last': 2,
     'indent': [2, 2],
+    'jsx-quotes': 2,
     'key-spacing': [2, { 'beforeColon': false, 'afterColon': true }],
     'keyword-spacing': 2,
     'new-cap': 0,
@@ -105,7 +106,6 @@ module.exports = {
     // react plugin ----------------------------------------------------------------
     'react/jsx-no-undef': 2,
     'react/jsx-uses-vars': 2,
-    'react/jsx-quotes': [2, 'double', 'avoid-escape'],
     'react/react-in-jsx-scope': 2,
     'react/jsx-uses-react': 2,
 
