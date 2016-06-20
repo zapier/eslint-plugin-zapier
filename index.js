@@ -35,7 +35,6 @@ module.exports = {
     'eqeqeq': [2, 'smart'],
     'no-alert': 2,
     'no-caller': 2,
-    'no-empty-label': 2, // DEPRECATED -> no-labels
     'no-eval': 2,
     'no-extend-native': 2,
     'no-extra-bind': 2,
@@ -80,7 +79,9 @@ module.exports = {
     'comma-spacing': 2,
     'eol-last': 2,
     'indent': [2, 2],
+    'jsx-quotes': 2,
     'key-spacing': [2, { 'beforeColon': false, 'afterColon': true }],
+    'keyword-spacing': 2,
     'new-cap': 0,
     'new-parens': 2,
     'no-array-constructor': 2,
@@ -93,7 +94,6 @@ module.exports = {
     'semi': 2,
     'semi-spacing': [2, {'before': false, 'after': true}],
     'space-infix-ops': 2,
-    'space-return-throw-case': 2, // DEPRECATED -> keyword-spacing
     'space-unary-ops': [2, {'words': true, 'nonwords': false}],
 
     // ES6 -------------------------------------------------------------------------
@@ -106,7 +106,6 @@ module.exports = {
     // react plugin ----------------------------------------------------------------
     'react/jsx-no-undef': 2,
     'react/jsx-uses-vars': 2,
-    'react/jsx-quotes': [2, 'double', 'avoid-escape'],
     'react/react-in-jsx-scope': 2,
     'react/jsx-uses-react': 2,
 
