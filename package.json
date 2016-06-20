@@ -12,7 +12,8 @@
   },
   "homepage": "https://github.com/zapier/eslint-config-zapier",
   "scripts": {
-    "lint": "eslint *.js"
+    "lint": "eslint *.js",
+    "test": "npm run -s lint"
   },
   "dependencies": {
     "babel-eslint": "6.0.4",
