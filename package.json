@@ -3,13 +3,7 @@
   "version": "0.1.0",
   "description": "shareable eslint config",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/zapier/eslint-config-zapier.git"
-  },
-  "bugs": {
-    "url": "https://github.com/zapier/eslint-config-zapier/issues"
-  },
+  "repository": "zapier/eslint-config-zapier",
   "homepage": "https://github.com/zapier/eslint-config-zapier",
   "scripts": {
     "lint": "eslint *.js",
