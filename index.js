@@ -80,6 +80,7 @@ module.exports = {
     'eol-last': 2,
     'indent': [2, 2],
     'key-spacing': [2, { 'beforeColon': false, 'afterColon': true }],
+    'keyword-spacing': 2,
     'new-cap': 0,
     'new-parens': 2,
     'no-array-constructor': 2,
@@ -92,7 +93,6 @@ module.exports = {
     'semi': 2,
     'semi-spacing': [2, {'before': false, 'after': true}],
     'space-infix-ops': 2,
-    'space-return-throw-case': 2, // DEPRECATED -> keyword-spacing
     'space-unary-ops': [2, {'words': true, 'nonwords': false}],
 
     // ES6 -------------------------------------------------------------------------
