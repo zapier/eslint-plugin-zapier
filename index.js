@@ -10,10 +10,6 @@ module.exports = {
     'browser': true
   },
 
-  'ecmaFeatures': {
-    'jsx': true
-  },
-
   'globals': {
     'escape': true,
     'unescape': true
