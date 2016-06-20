@@ -20,8 +20,8 @@ module.exports = {
   },
 
   'plugins': [
-    'react',
-    'no-console-log'
+    'react'
+    // 'no-console-log'
   ],
 
   'rules': {
