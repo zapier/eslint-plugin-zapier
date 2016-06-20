@@ -11,7 +11,11 @@
     "url": "https://github.com/zapier/eslint-config-zapier/issues"
   },
   "homepage": "https://github.com/zapier/eslint-config-zapier",
+  "scripts": {
+    "lint": "eslint *.js"
+  },
   "dependencies": {
+    "babel-eslint": "6.0.4",
     "eslint": "2.13.1",
     "eslint-plugin-react": "5.2.2"
   }
