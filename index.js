@@ -17,7 +17,6 @@ module.exports = {
 
   'plugins': [
     'react'
-    // 'no-console-log'
   ],
 
   'rules': {
@@ -28,7 +27,7 @@ module.exports = {
 
     // possible errors -------------------------------------------------------------
     'comma-dangle': 0,
-    'no-console': 0,
+    'no-console': [2, { 'allow': ['warn', 'error']}],
 
     // stylistic issues ------------------------------------------------------------
     'no-mixed-spaces-and-tabs': [2, false],
@@ -107,7 +106,5 @@ module.exports = {
     'react/react-in-jsx-scope': 2,
     'react/jsx-uses-react': 2,
 
-    // no-console-log plugin -------------------------------------------------------
-    // 'no-console-log/no-console-log': 2
   }
 };
