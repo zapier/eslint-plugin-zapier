@@ -10,5 +10,8 @@
   "bugs": {
     "url": "https://github.com/zapier/eslint-config-zapier/issues"
   },
-  "homepage": "https://github.com/zapier/eslint-config-zapier"
+  "homepage": "https://github.com/zapier/eslint-config-zapier",
+  "dependencies": {
+    "eslint": "2.13.1"
+  }
 }
