@@ -35,7 +35,6 @@ module.exports = {
     'eqeqeq': [2, 'smart'],
     'no-alert': 2,
     'no-caller': 2,
-    'no-empty-label': 2, // DEPRECATED -> no-labels
     'no-eval': 2,
     'no-extend-native': 2,
     'no-extra-bind': 2,
