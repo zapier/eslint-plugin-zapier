@@ -79,7 +79,7 @@ module.exports = {
     // stylistic issues ------------------------------------------------------------
     'comma-spacing': 2,
     'eol-last': 2,
-    'indent': [2, 2],
+    'indent': [2, 2, { 'SwitchCase': 1 }],
     'jsx-quotes': 2,
     'key-spacing': [2, { 'beforeColon': false, 'afterColon': true }],
     'keyword-spacing': 2,
