@@ -228,6 +228,38 @@ module.exports = {
     'unicode-bom': 0,
     'wrap-regex': 0,
 
+    // es6 -------------------------------------------------------------------------
+
+    'arrow-body-style': 0,
+    'arrow-parens': 0,
+    'arrow-spacing': 0,
+    'constructor-super': 2,
+    'generator-star-spacing': 0,
+    'no-class-assign': 2,
+    'no-confusing-arrow': 0,
+    'no-const-assign': 2,
+    'no-dupe-class-members': 2,
+    'no-duplicate-imports': 0,
+    'no-new-symbol': 2,
+    'no-restricted-imports': 0,
+    'no-this-before-super': 2,
+    'no-useless-computed-key': 0,
+    'no-useless-constructor': 0,
+    'no-useless-rename': 0,
+    'no-var': 2,
+    'object-shorthand': 0,
+    'prefer-arrow-callback': 0,
+    'prefer-const': 0,
+    'prefer-reflect': 0,
+    'prefer-rest-params': 0,
+    'prefer-spread': 0,
+    'prefer-template': 0,
+    'require-yield': 2,
+    'rest-spread-spacing': 0,
+    'sort-imports': 0,
+    'template-curly-spacing': 0,
+    'yield-star-spacing': 0,
+
     // -----------------------------------------------------------------------------
     // PLUGINS
     // -----------------------------------------------------------------------------
