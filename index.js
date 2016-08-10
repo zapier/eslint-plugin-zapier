@@ -19,18 +19,6 @@ module.exports = {
   'rules': {
 
     // -----------------------------------------------------------------------------
-    // ESLINT:RECOMMENDED OVERRIDES
-    // -----------------------------------------------------------------------------
-
-    // possible errors -------------------------------------------------------------
-
-    'comma-dangle': 0,
-
-    // stylistic issues ------------------------------------------------------------
-
-    'no-mixed-spaces-and-tabs': [2, false],
-
-    // -----------------------------------------------------------------------------
     // ESLINT RULES
     // -----------------------------------------------------------------------------
 
@@ -163,24 +151,82 @@ module.exports = {
 
     // stylistic issues ------------------------------------------------------------
 
+    'array-bracket-spacing': 0,
+    'block-spacing': 0,
+    'brace-style': 0,
+    'camelcase': 0,
+    'comma-dangle': 0,
     'comma-spacing': 2,
+    'comma-style': 0,
+    'computed-property-spacing': 0,
+    'consistent-this': 0,
     'eol-last': 2,
+    'func-names': 0,
+    'func-style': 0,
+    'id-blacklist': 0,
+    'id-length': 0,
+    'id-match': 0,
     'indent': [2, 2, { 'SwitchCase': 1 }],
     'jsx-quotes': 2,
     'key-spacing': [2, { 'beforeColon': false, 'afterColon': true }],
     'keyword-spacing': 2,
+    'linebreak-style': 0,
+    'lines-around-comment': 0,
+    'max-depth': 0,
+    'max-len': 0,
+    'max-lines': 0,
+    'max-nested-callbacks': 0,
+    'max-params': 0,
+    'max-statements': 0,
+    'max-statements-per-line': 0,
+    'multiline-ternary': 0,
     'new-cap': 0,
     'new-parens': 2,
+    'newline-after-var': 0,
+    'newline-before-return': 0,
+    'newline-per-chained-call': 0,
     'no-array-constructor': 2,
+    'no-bitwise': 0,
+    'no-continue': 0,
+    'no-inline-comments': 0,
+    'no-lonely-if': 0,
+    'no-mixed-operators': 0,
+    'no-mixed-spaces-and-tabs': [2, false],
+    'no-multiple-empty-lines': 0,
+    'no-negated-condition': 0,
+    'no-nested-ternary': 0,
     'no-new-object': 2,
+    'no-plusplus': 0,
+    'no-restricted-syntax': 0,
+    'no-spaced-fun': 0,
     'no-spaced-func': 2,
+    'no-tabs': 0,
+    'no-ternary': 0,
     'no-trailing-spaces': 2,
     'no-underscore-dangle': 0,
+    'no-unneeded-ternary': 0,
+    'no-whitespace-before-property': 0,
+    'object-curly-newline': 0,
+    'object-curly-spacing': 0,
+    'object-property-newline- one-var-declaration-per-line': 0,
+    'one-var': 0,
+    'operator-assignment': 0,
+    'operator-linebreak': 0,
+    'padded-blocks': 0,
+    'quote-props': 0,
     'quotes': [2, 'single', 'avoid-escape'],
+    'require-jsdoc': 0,
     'semi': 2,
     'semi-spacing': [2, {'before': false, 'after': true}],
+    'sort-vars': 0,
+    'space-before-blocks': 0,
+    'space-before-function-paren': 0,
+    'space-in-parens': 0,
     'space-infix-ops': 2,
     'space-unary-ops': [2, {'words': true, 'nonwords': false}],
+    'spaced-comment': 0,
+    'unicode-bom': 0,
+    'wrap-regex': 0,
 
     // -----------------------------------------------------------------------------
     // PLUGINS
