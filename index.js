@@ -1,22 +1,21 @@
-'use strict';
-
 module.exports = {
+
   'extends': 'eslint:recommended',
 
   'parser': 'babel-eslint',
 
   'env': {
     'node': true,
-    'browser': true
+    'browser': true,
   },
 
   'globals': {
     'escape': true,
-    'unescape': true
+    'unescape': true,
   },
 
   'plugins': [
-    'react'
+    'react',
   ],
 
   'rules': {
@@ -26,10 +25,12 @@ module.exports = {
     // -----------------------------------------------------------------------------
 
     // possible errors -------------------------------------------------------------
+
     'comma-dangle': 0,
-    'no-console': [2, { 'allow': ['warn', 'error']}],
+    'no-console': [2, { 'allow': ['warn', 'error'] }],
 
     // stylistic issues ------------------------------------------------------------
+
     'no-mixed-spaces-and-tabs': [2, false],
 
     // -----------------------------------------------------------------------------
@@ -37,6 +38,7 @@ module.exports = {
     // -----------------------------------------------------------------------------
 
     // best practices --------------------------------------------------------------
+
     'consistent-return': 2,
     'curly': [2, 'all'],
     'dot-notation': [2, { 'allowKeywords': true }],
@@ -67,6 +69,7 @@ module.exports = {
     'yoda': [2, 'never'],
 
     // variables -------------------------------------------------------------------
+
     'no-label-var': 2,
     'no-shadow': 2,
     'no-shadow-restricted-names': 2,
@@ -74,9 +77,11 @@ module.exports = {
     'no-use-before-define': 2,
 
     // nodejs ----------------------------------------------------------------------
+
     'no-process-exit': 2,
 
     // stylistic issues ------------------------------------------------------------
+
     'comma-spacing': 2,
     'eol-last': 2,
     'indent': [2, 2, { 'SwitchCase': 1 }],
@@ -101,6 +106,7 @@ module.exports = {
     // -----------------------------------------------------------------------------
 
     // react plugin ----------------------------------------------------------------
+
     'react/jsx-no-undef': 2,
     'react/jsx-uses-vars': 2,
     'react/react-in-jsx-scope': 2,
