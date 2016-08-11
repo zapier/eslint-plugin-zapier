@@ -7,15 +7,18 @@
   "homepage": "https://github.com/zapier/eslint-config-zapier",
   "scripts": {
     "lint": "eslint *.js",
-    "test": "npm run -s lint"
+    "test": "npm run -s lint && mocha"
   },
   "dependencies": {
     "eslint-plugin-react": "5.2.2"
   },
   "devDependencies": {
-    "eslint": "3.2.2"
+    "eslint": "3.2.2",
+    "lodash.difference": "4.4.0",
+    "mocha": "3.0.2"
   },
   "peerDependencies": {
-    "eslint": "3.2.2"
+    "eslint": "3.2.2",
+    "eslint-plugin-react": "5.2.2"
   }
 }
