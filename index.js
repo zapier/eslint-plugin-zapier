@@ -30,6 +30,10 @@ module.exports = {
     // ESLINT RULES
     // -----------------------------------------------------------------------------
 
+    // strict ----------------------------------------------------------------------
+
+    'strict': 0,
+
     // possible errors -------------------------------------------------------------
 
     'no-cond-assign': 2,
@@ -216,7 +220,8 @@ module.exports = {
     'no-whitespace-before-property': 0,
     'object-curly-newline': 0,
     'object-curly-spacing': 0,
-    'object-property-newline- one-var-declaration-per-line': 0,
+    'object-property-newline': 0,
+    'one-var-declaration-per-line': 0,
     'one-var': 0,
     'operator-assignment': 0,
     'operator-linebreak': 0,
