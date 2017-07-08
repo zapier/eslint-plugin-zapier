@@ -7,9 +7,6 @@ const assert = require('assert');
 const diff = require('lodash.difference');
 const eslint = require('eslint');
 
-// local
-// const conf = require('..');
-
 // setup -----------------------------------------------------------------------
 
 const eslintRules = Object.keys(eslint.linter.defaults().rules);
