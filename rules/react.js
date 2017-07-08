@@ -10,10 +10,10 @@ module.exports = {
   ],
 
   'rules': {
-    'react/jsx-no-undef': 2,
-    'react/jsx-uses-vars': 2,
-    'react/react-in-jsx-scope': 2,
-    'react/jsx-uses-react': 2,
-    'react/forbid-foreign-prop-types': 2,
+    'react/forbid-foreign-prop-types': 'error',
+    'react/jsx-no-undef': 'error',
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
+    'react/react-in-jsx-scope': 'error',
   },
 };
