@@ -16,8 +16,6 @@ module.exports = {
   },
 
   'globals': {
-    'escape': true,
-    'unescape': true,
     'process': false,
   },
 
