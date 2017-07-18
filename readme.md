@@ -42,3 +42,18 @@ You may optionally configure any specific rules you want to override under the `
     }
 }
 ```
+
+## Versioning Policy
+
+`eslint-config-zapier` follows a semantic versioning policy along the lines of [ESLint's semver policy](https://github.com/eslint/eslint#semantic-versioning-policy):
+
+Major releases:
+- changing existing rules or adding new rules (more linting errors reported)
+
+Minor releases:
+- disabling or removing rules (less linting errors reported)
+
+Patch releases:
+- bug fixes
+- doc changes
+- non user-facing changes
