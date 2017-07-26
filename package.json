@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-zapier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "shareable zapier eslint config",
   "main": "index.js",
   "repository": "zapier/eslint-config-zapier",
