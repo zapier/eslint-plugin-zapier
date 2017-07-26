@@ -12,7 +12,7 @@
   "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^7.2.3",
-    "eslint": "3.2.2",
+    "eslint": "^4.3.0",
     "eslint-plugin-flowtype": "^2.32.1",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^6.10.3",
@@ -21,7 +21,7 @@
   },
   "peerDependencies": {
     "babel-eslint": "^7.2.3",
-    "eslint": "3.2.2",
+    "eslint": "^4.3.0",
     "eslint-plugin-flowtype": "^2.32.1",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^6.10.3"

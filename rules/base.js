@@ -29,7 +29,7 @@ module.exports = {
     'dot-notation': ['error', {'allowKeywords': true}],
     'eol-last': 'error',
     'eqeqeq': ['error', 'smart'],
-    'indent': ['error', 2],
+    'indent-legacy': ['error', 2],
     'jsx-a11y/alt-text': 'error',
     'jsx-quotes': ['error', 'prefer-double'],
     'key-spacing': ['error', {'beforeColon': false, 'afterColon': true}],
