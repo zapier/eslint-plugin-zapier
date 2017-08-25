@@ -7,23 +7,18 @@
   "homepage": "https://github.com/zapier/eslint-config-zapier",
   "scripts": {
     "lint": "eslint index.js ./rules ./test",
-    "test": "npm run -s lint && mocha"
+    "test": "npm run -s lint && mocha",
+    "minor-release": "npm version minor && npm publish && git push --follow-tags"
   },
-  "dependencies": {},
+  "dependencies": {
+    "babel-eslint": "7.2.3",
+    "eslint": "4.5.0",
+    "eslint-plugin-flowtype": "2.32.1",
+    "eslint-plugin-jsx-a11y": "5.0.3",
+    "eslint-plugin-react": "7.3.0"
+  },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint": "^4.3.0",
-    "eslint-plugin-flowtype": "^2.32.1",
-    "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-react": "^6.10.3",
     "lodash.difference": "4.4.0",
     "mocha": "3.0.2"
-  },
-  "peerDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint": "^4.3.0",
-    "eslint-plugin-flowtype": "^2.32.1",
-    "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-react": "^6.10.3"
   }
 }
