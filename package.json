@@ -7,7 +7,8 @@
   "homepage": "https://github.com/zapier/eslint-config-zapier",
   "scripts": {
     "lint": "eslint index.js ./rules ./test",
-    "test": "npm run -s lint && mocha"
+    "test": "npm run -s lint && mocha",
+    "minor-release": "npm version minor && npm publish && git push --follow-tags"
   },
   "dependencies": {
     "babel-eslint": "7.2.3",
