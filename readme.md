@@ -4,16 +4,11 @@ Shareable recommended rule configuration for internal Zapier usage.
 
 ## Installation
 
-Run the following command to install `eslint-config-zapier` and all its peer dependencies:
-
 ```
-(
-  export PKG=eslint-config-zapier;
-  npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs npm install --save-dev "$PKG@latest"
-)
+npm install --save-dev eslint-config-zapier
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-config-zapier` and its peer dependencies globally.
+**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-config-zapier` globally.
 
 ## Usage
 
