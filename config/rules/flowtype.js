@@ -5,5 +5,7 @@ module.exports = {
     'flowtype',
   ],
 
-  'rules': {},
+  'rules': {
+    'flowtype/no-types-missing-file-annotation': 'error',
+  },
 };
