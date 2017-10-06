@@ -45,6 +45,8 @@ all rules from this config that would conflict with prettier:
 }
 ```
 
+Note that this does **not** enable prettier in the consuming project. It only disables all ESLint rules that would otherwise conflict with prettier.
+
 ## Versioning Policy
 
 `eslint-config-zapier` follows a semantic versioning policy along the lines of [ESLint's semver policy](https://github.com/eslint/eslint#semantic-versioning-policy):
