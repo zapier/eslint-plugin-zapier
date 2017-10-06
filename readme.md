@@ -32,6 +32,21 @@ You may optionally configure any specific rules you want to override under the `
 }
 ```
 
+## Prettier Support
+
+If you're using prettier, you can extend from `zapier/prettier` instead to turn-off
+all rules from this config that would conflict with prettier:
+
+```json
+{
+    "extends": [
+        "zapier/prettier"
+    ]
+}
+```
+
+Note that this does **not** enable prettier in the consuming project. It only disables all ESLint rules that would otherwise conflict with prettier.
+
 ## Versioning Policy
 
 `eslint-config-zapier` follows a semantic versioning policy along the lines of [ESLint's semver policy](https://github.com/eslint/eslint#semantic-versioning-policy):
