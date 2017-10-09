@@ -1,10 +1,10 @@
-module.exports = {
-  extends: [
-    './rules/base',
-    './rules/react',
-    './rules/jsx-a11y',
-    './rules/flowtype',
-  ].map(require.resolve),
+const path = require('path');
+const requireIndex = require('requireindex');
 
-  rules: {},
+module.exports = {
+  rules: requireIndex(path.join(__dirname, '/custom-rules')),
+  configs: {
+    base: require('./config/base'),
+    prettier: require('./config/prettier'),
+  },
 };

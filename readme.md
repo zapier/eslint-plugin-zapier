@@ -1,24 +1,23 @@
-# eslint-config-zapier
+# eslint-plugin-zapier
 
-Shareable recommended rule configuration for internal Zapier usage.
+Shareable recommended rule configuration and custom rules for internal Zapier usage.
 
 ## Installation
 
 ```
-npm install --save-dev eslint-config-zapier
+npm install --save-dev eslint-plugin-zapier
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-config-zapier` globally.
+**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-zapier` globally.
 
 ## Usage
 
-Add `zapier` to the `extends` section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `zapier` to the `plugins` and `extends` section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
-    "extends": [
-        "zapier"
-    ]
+  "plugins": ["zapier"],
+  "extends": ["plugin:zapier/base"],
 }
 ```
 
@@ -26,22 +25,21 @@ You may optionally configure any specific rules you want to override under the `
 
 ```json
 {
-    "rules": {
-        "semi": "off"
-    }
+  "rules": {
+    "semi": "off"
+  }
 }
 ```
 
 ## Prettier Support
 
-If you're using prettier, you can extend from `zapier/prettier` instead to turn-off
-all rules from this config that would conflict with prettier:
+If you're using prettier, you can extend from `plugin:zapier/prettier` instead to turn-off all rules from this config that would conflict with prettier:
 
 ```json
 {
-    "extends": [
-        "zapier/prettier"
-    ]
+  "extends": [
+    "plugin:zapier/prettier"
+  ]
 }
 ```
 
@@ -49,7 +47,7 @@ Note that this does **not** enable prettier in the consuming project. It only di
 
 ## Versioning Policy
 
-`eslint-config-zapier` follows a semantic versioning policy along the lines of [ESLint's semver policy](https://github.com/eslint/eslint#semantic-versioning-policy):
+`eslint-plugin-zapier` follows a semantic versioning policy along the lines of [ESLint's semver policy](https://github.com/eslint/eslint#semantic-versioning-policy):
 
 Major releases:
 - changing existing rules or adding new rules (more linting errors reported)

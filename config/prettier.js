@@ -1,7 +1,7 @@
 // prettier-ignore
 module.exports = {
   extends: [
-    require.resolve('./index'),
+    require.resolve('./base'),
     'prettier',
     'prettier/react',
   ],
