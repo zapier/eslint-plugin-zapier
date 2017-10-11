@@ -4,6 +4,7 @@ module.exports = {
       description:
         "disallow using _.get with dot notation (e.g.: `_.get(state, 'foo.bar.baz')`)",
     },
+    fixable: 'code',
   },
 
   create(context) {
@@ -26,10 +27,17 @@ module.exports = {
           secondArgument.type === 'Literal' &&
           secondArgument.value.includes('.')
         ) {
-          context.report(
+          context.report({
             node,
-            'Dot notation used in second argument of `_.get`. Use array notation instead.'
-          );
+            message:
+              'Dot notation used in second argument of `_.get`. Use array notation instead.',
+            fix(fixer) {
+              return fixer.replaceText(
+                secondArgument,
+                JSON.stringify(secondArgument.value.split('.'))
+              );
+            },
+          });
         }
       },
     };
