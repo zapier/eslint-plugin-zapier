@@ -3,7 +3,14 @@
 const rule = require('../../custom-rules/disallow-lodash-get-dot-notation');
 const RuleTester = require('eslint').RuleTester;
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 2015 } });
+
+const errors = [
+  {
+    message:
+      'Dot notation used in second argument of `_.get`. Use array notation instead.',
+  },
+];
 
 ruleTester.run('disallow-lodash-get-dot-notation', rule, {
   valid: [
@@ -16,12 +23,11 @@ ruleTester.run('disallow-lodash-get-dot-notation', rule, {
     {
       code: '_.get(state, "foo.bar.baz");',
       output: '_.get(state, ["foo","bar","baz"]);',
-      errors: [
-        {
-          message:
-            'Dot notation used in second argument of `_.get`. Use array notation instead.',
-        },
-      ],
+      errors,
+    },
+    {
+      code: '_.get(state, `foo.bar.${stuff}`);',
+      errors,
     },
   ],
 });
