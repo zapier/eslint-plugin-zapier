@@ -1,9 +1,17 @@
+const isTemplateLiteralWithDots = node =>
+  node.type === 'TemplateLiteral' &&
+  node.quasis.filter(q => q.value.raw.includes('.')).length > 0;
+
+const isLiteralWithDots = node =>
+  node.type === 'Literal' && node.value.includes('.');
+
 module.exports = {
   meta: {
     docs: {
       description:
         "disallow using _.get with dot notation (e.g.: `_.get(state, 'foo.bar.baz')`)",
     },
+    fixable: 'code',
   },
 
   create(context) {
@@ -23,13 +31,24 @@ module.exports = {
 
         if (
           secondArgument &&
-          secondArgument.type === 'Literal' &&
-          secondArgument.value.includes('.')
+          (isLiteralWithDots(secondArgument) ||
+            isTemplateLiteralWithDots(secondArgument))
         ) {
-          context.report(
+          context.report({
             node,
-            'Dot notation used in second argument of `_.get`. Use array notation instead.'
-          );
+            message:
+              'Dot notation used in second argument of `_.get`. Use array notation instead.',
+            fix(fixer) {
+              if (secondArgument.type === 'TemplateLiteral') {
+                return false;
+              }
+
+              return fixer.replaceText(
+                secondArgument,
+                JSON.stringify(secondArgument.value.split('.'))
+              );
+            },
+          });
         }
       },
     };
