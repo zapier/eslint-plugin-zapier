@@ -13,7 +13,7 @@ const ruleTester = new RuleTester({
 const errors = (importName, moduleName) => [
   {
     message:
-      `Default import "${importName}" should be the same as the module name "${moduleName}".`
+      `Default import "${importName}" should be the same as the module name "${moduleName}".`,
   },
 ];
 

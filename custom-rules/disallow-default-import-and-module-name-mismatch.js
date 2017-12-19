@@ -19,17 +19,17 @@ create(context) {
       if (specifier.type !== 'ImportDefaultSpecifier') return;
       if (!value.startsWith('app/')) return;
 
-      const moduleName = value.slice(value.lastIndexOf("/") + 1)
+      const moduleName = value.slice(value.lastIndexOf("/") + 1);
 
-      if (IGNORED_MODULES.test(moduleName)) return
+      if (IGNORED_MODULES.test(moduleName)) return;
 
-      const { name } = specifier.local
+      const { name } = specifier.local;
 
       if (name !== moduleName) {
         context.report({
           node,
           message:
-            `Default import "${name}" should be the same as the module name "${moduleName}".`
+            `Default import "${name}" should be the same as the module name "${moduleName}".`,
         });
       }
     }
