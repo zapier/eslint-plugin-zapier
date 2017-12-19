@@ -1,3 +1,5 @@
+const IGNORED_MODULES = /-|\.scss|\.graphql/;
+
 module.exports = {
 meta: {
   docs: {
@@ -10,16 +12,24 @@ create(context) {
   return {
     ImportDeclaration(node) {
       const [ specifier ] = node.specifiers;
+      if (!specifier) return;
+
       const { value } = node.source;
 
       if (specifier.type !== 'ImportDefaultSpecifier') return;
       if (!value.startsWith('app/')) return;
 
-      if (specifier.local.name !== value.slice(value.lastIndexOf("/") + 1)) {
+      const moduleName = value.slice(value.lastIndexOf("/") + 1)
+
+      if (IGNORED_MODULES.test(moduleName)) return
+
+      const { name } = specifier.local
+
+      if (name !== moduleName) {
         context.report({
           node,
           message:
-            'Default import identifier should be the same as the module name.'
+            `Default import "${name}" should be the same as the module name "${moduleName}".`
         });
       }
     }

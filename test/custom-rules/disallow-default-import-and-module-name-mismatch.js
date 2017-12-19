@@ -10,10 +10,10 @@ const ruleTester = new RuleTester({
   }
 });
 
-const errors = [
+const errors = (importName, moduleName) => [
   {
     message:
-      'Default import identifier should be the same as the module name.',
+      `Default import "${importName}" should be the same as the module name "${moduleName}".`
   },
 ];
 
@@ -28,11 +28,11 @@ ruleTester.run('disallow-default-import-and-module-name-mismatch', rule, {
   invalid: [
     {
       code: 'import Foo from "app/Bar";',
-      errors,
+      errors: errors('Foo', 'Bar'),
     },
     {
       code: 'import Foo, { Bar } from "app/Baz";',
-      errors,
+      errors: errors('Foo', 'Baz'),
     },
   ],
 });
