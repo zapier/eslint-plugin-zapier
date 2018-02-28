@@ -9,7 +9,7 @@ const eslint = require('eslint');
 
 // setup -----------------------------------------------------------------------
 
-const eslintRules = Object.keys(eslint.linter.defaults().rules);
+const eslintRules = Object.keys(eslint.linter.rules._rules);
 const makeLinter = (config = 'base') =>
   new eslint.CLIEngine({
     useEslintrc: false,
