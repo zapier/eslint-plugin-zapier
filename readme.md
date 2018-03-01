@@ -50,10 +50,14 @@ Note that this does **not** enable prettier in the consuming project. It only di
 `eslint-plugin-zapier` follows a semantic versioning policy along the lines of [ESLint's semver policy](https://github.com/eslint/eslint#semantic-versioning-policy):
 
 Major releases:
-- changing existing rules or adding new rules (more linting errors reported)
+In general, any change that could cause more errors to be reported on the consumer's CI should be considered a major release. Examples:
+- adding new rules that are on by default in one of the presets
+- changing existing rules, if it causes more errors
 
 Minor releases:
 - disabling or removing rules (less linting errors reported)
+- changing existing rules, if it doesn't cause more errors
+- adding new rules, if they are not on by default in any preset
 
 Patch releases:
 - bug fixes
