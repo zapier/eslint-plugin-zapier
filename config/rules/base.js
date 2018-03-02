@@ -86,6 +86,6 @@ module.exports = {
     'space-infix-ops': 'error',
     'space-unary-ops': ['error', {'words': true, 'nonwords': false}],
     'strict': ['off', 'never'],
-    'yoda': ['error', 'never'],
+    'yoda': ['error', 'never', {'exceptRange': true}],
   },
 };
