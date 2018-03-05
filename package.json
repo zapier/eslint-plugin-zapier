@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-zapier",
+  "name": "@zapier/eslint-plugin-zapier",
   "version": "5.1.0",
   "description": "shareable zapier eslint config and custom rules",
   "main": "index.js",
