@@ -1,5 +1,5 @@
 module.exports = {
   rules: {
-    'zapier/disallow-lodash-get-dot-notation': 'error',
+    '@zapier/zapier/disallow-lodash-get-dot-notation': 'error',
   },
 };
