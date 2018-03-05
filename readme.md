@@ -5,19 +5,19 @@ Shareable recommended rule configuration and custom rules for internal Zapier us
 ## Installation
 
 ```
-npm install --save-dev eslint-plugin-zapier
+npm install --save-dev @zapier/eslint-plugin-zapier
 ```
 
 **Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-zapier` globally.
 
 ## Usage
 
-Add `zapier` to the `plugins` and `extends` section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `@zapier/zapier` to the `plugins` and `extends` section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
-  "plugins": ["zapier"],
-  "extends": ["plugin:zapier/base"],
+  "plugins": ["@zapier/zapier"],
+  "extends": ["plugin:@zapier/zapier/base"],
 }
 ```
 
@@ -33,12 +33,12 @@ You may optionally configure any specific rules you want to override under the `
 
 ## Prettier Support
 
-If you're using prettier, you can extend from `plugin:zapier/prettier` instead to turn-off all rules from this config that would conflict with prettier:
+If you're using prettier, you can extend from `plugin:@zapier/zapier/prettier` instead to turn-off all rules from this config that would conflict with prettier:
 
 ```json
 {
   "extends": [
-    "plugin:zapier/prettier"
+    "plugin:@zapier/zapier/prettier"
   ]
 }
 ```
