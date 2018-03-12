@@ -59,7 +59,7 @@ exports['eslint-plugin-zapier'] = {
     const config = linter.getConfigForFile('foo.js');
 
     const customRules = Object.keys(config.rules).filter(rule =>
-      rule.startsWith('zapier/')
+      rule.startsWith('@zapier/zapier/')
     );
 
     assert.ok(customRules.length > 0);
