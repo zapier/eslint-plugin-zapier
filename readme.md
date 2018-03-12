@@ -5,7 +5,7 @@ Shareable recommended rule configuration and custom rules for internal Zapier us
 ## Installation
 
 ```
-npm install --save-dev @zapier/eslint-plugin-zapier
+yarn add --dev @zapier/eslint-plugin-zapier
 ```
 
 **Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-zapier` globally.
