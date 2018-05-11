@@ -71,15 +71,22 @@ exports['eslint-plugin-zapier'] = {
     assert.doesNotThrow(() => linter.executeOnText(''));
   },
 
-  'exposes a prettier config': () => {
-    const linter = makeLinter('prettier');
+  'exposes a node config': () => {
+    const linter = makeLinter('node');
     const config = linter.getConfigForFile('foo.js');
 
     assert.ok(Object.keys(config.rules).length > 0);
   },
 
-  'prettier config contains base config': () => {
-    const config = makeLinter('prettier').getConfigForFile('foo.js');
+  'exposes a browser config': () => {
+    const linter = makeLinter('browser');
+    const config = linter.getConfigForFile('foo.js');
+
+    assert.ok(Object.keys(config.rules).length > 0);
+  },
+
+  'node config contains base config': () => {
+    const config = makeLinter('node').getConfigForFile('foo.js');
     const baseConfig = makeLinter('base').getConfigForFile('foo.js');
 
     assert.deepEqual(
@@ -88,21 +95,13 @@ exports['eslint-plugin-zapier'] = {
     );
   },
 
-  'prettier config turns a bunch of rules off': () => {
-    const config = makeLinter('prettier').getConfigForFile('./foo.js');
-    const baseConfig = makeLinter('base').getConfigForFile('./foo.js');
+  'browser config contains base config': () => {
+    const config = makeLinter('browser').getConfigForFile('foo.js');
+    const baseConfig = makeLinter('base').getConfigForFile('foo.js');
 
-    const getDisabledRules = rules =>
-      Object.keys(rules).reduce((acc, rule) => {
-        if (rules[rule] === 'off') {
-          return acc.concat(rule);
-        }
-        return acc;
-      }, []);
-
-    assert.ok(
-      getDisabledRules(config.rules).length >
-        getDisabledRules(baseConfig.rules).length
+    assert.deepEqual(
+      diff(Object.keys(baseConfig.rules), Object.keys(config.rules)),
+      []
     );
   },
 };

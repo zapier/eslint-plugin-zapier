@@ -2,12 +2,12 @@ module.exports = {
   parser: 'babel-eslint',
 
   env: {
-    'browser': true
+    'browser': true,
   },
 
   plugins: ['compat'],
 
   rules: {
-    'compat/compat': 'error'
+    'compat/compat': 'error',
   }
 };

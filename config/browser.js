@@ -2,8 +2,7 @@
 module.exports = {
   extends: [
     require.resolve('./base'),
-    'prettier',
-    'prettier/react',
+    require.resolve('./rules/compat'),
   ],
 
   rules: {},

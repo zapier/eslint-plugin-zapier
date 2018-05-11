@@ -5,6 +5,7 @@ module.exports = {
   rules: requireIndex(path.join(__dirname, '/custom-rules')),
   configs: {
     base: require('./config/base'),
-    prettier: require('./config/prettier'),
+    node: require('./config/node'),
+    browser: require('./config/browser'),
   },
 };
