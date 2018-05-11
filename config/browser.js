@@ -5,5 +5,9 @@ module.exports = {
     require.resolve('./rules/compat'),
   ],
 
+  env: {
+    browser: true,
+  },
+
   rules: {},
 };

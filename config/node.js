@@ -4,5 +4,9 @@ module.exports = {
     require.resolve('./base'),
   ],
 
+  env: {
+    node: true,
+  },
+
   rules: {},
 };

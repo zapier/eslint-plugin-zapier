@@ -11,7 +11,6 @@ module.exports = {
 
   'env': {
     'commonjs': true,
-    'browser': true,
     'es6': true,
   },
 
