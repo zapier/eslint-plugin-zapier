@@ -79,6 +79,7 @@ module.exports = {
     'no-use-before-define': 'error',
     'no-var': 'error',
     'no-with': 'error',
+    'object-shorthand': ['error', 'properties'],
     'prefer-const': 'error',
     'quotes': ['error', 'single', {'avoidEscape': true, 'allowTemplateLiterals': true}],
     'semi-spacing': ['error', {'before': false, 'after': true}],
