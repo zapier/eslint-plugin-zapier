@@ -9,6 +9,7 @@ module.exports = {
     "flowtype/use-flow-type": "error",
     "flowtype/no-weak-types": ["error", {
       "Object": false,
+      "Function": false
     }]
   }
 };
