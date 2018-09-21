@@ -1,4 +1,4 @@
-const IMPORTS_WHITELIST = /^app\/(?!graphql|legacy).*(?!.scss)/;
+const IMPORTS_BLACKLIST = /^app\/(?:graphql|legacy)|.scss/;
   
 const getRegularImportVariants = value =>
   [value.slice(value.lastIndexOf("/") + 1)];
@@ -13,10 +13,17 @@ const getComponentImportVariants = value =>
       return variants
     }, []);
 
-const getImportVariants = value =>
-  value.includes('components')
+const getImportVariants = value => {
+  value =
+    value[0].toUpperCase() +
+    value
+      .slice(1)
+      .replace(/-([a-z])/g, capture => capture[1].toUpperCase());
+  
+  return value.includes('components')
     ? getComponentImportVariants(value)
     : getRegularImportVariants(value);
+}
 
 module.exports = {
   meta: {
@@ -35,7 +42,7 @@ module.exports = {
         const { value } = node.source;
 
         if (specifier.type !== 'ImportDefaultSpecifier') return;
-        if (!IMPORTS_WHITELIST.test(value)) return;
+        if (!value.startsWith('app/') || IMPORTS_BLACKLIST.test(value)) return;
 
         const importVariants = getImportVariants(value);
         const { name } = specifier.local;
