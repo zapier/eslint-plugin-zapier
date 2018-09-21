@@ -15,8 +15,8 @@ const getComponentImportVariants = value =>
 
 const getImportVariants = value =>
   value.includes('components')
-    ? getRegularImportVariants(value)
-    : getComponentImportVariants(value)
+    ? getComponentImportVariants(value)
+    : getRegularImportVariants(value)
 
 module.exports = {
 meta: {
@@ -44,7 +44,7 @@ create(context) {
         context.report({
           node,
           message:
-            `Default import "${name}" should be on of the following values: "${importVariants.join(', ')}".`,
+            `Default import "${name}" should be one of the following values: "${importVariants.join(', ')}".`,
         });
       }
     }
