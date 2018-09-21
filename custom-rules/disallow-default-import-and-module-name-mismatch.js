@@ -1,4 +1,22 @@
-const IMPORTS_WHITELIST = /^app\/(?!graphql|legacy|.scss).*/;
+const IMPORTS_WHITELIST = /^app\/(?!graphql|legacy).*(?!.scss)/;
+  
+const getRegularImportVariants = value =>
+  [value.slice(value.lastIndexOf("/") + 1)];
+
+const getComponentImportVariants = value =>
+  value
+    .replace(/^app\/[\w-]+\/components\//, '')
+    .split('/')
+    .reverse()
+    .reduce((variants, part, i) => {
+      variants.push(part + (variants[i - 1] || ''))
+      return variants
+    }, []);
+
+const getImportVariants = value =>
+  value.includes('components')
+    ? getRegularImportVariants(value)
+    : getComponentImportVariants(value)
 
 module.exports = {
 meta: {
@@ -17,16 +35,16 @@ create(context) {
       const { value } = node.source;
 
       if (specifier.type !== 'ImportDefaultSpecifier') return;
-      if (!IMPORTS_WHITELIST.test(value)) return
+      if (!IMPORTS_WHITELIST.test(value)) return;
 
-      const moduleName = value.slice(value.lastIndexOf("/") + 1);
+      const importVariants = getImportVariants(value);
       const { name } = specifier.local;
 
-      if (name !== moduleName) {
+      if (!importVariants.includes(name)) {
         context.report({
           node,
           message:
-            `Default import "${name}" should be the same as the module name "${moduleName}".`,
+            `Default import "${name}" should be on of the following values: "${importVariants.join(', ')}".`,
         });
       }
     }
