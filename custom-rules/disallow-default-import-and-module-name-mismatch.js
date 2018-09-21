@@ -1,4 +1,4 @@
-const IGNORED_MODULES = /-|\.scss|\.graphql/;
+const IMPORTS_WHITELIST = /^app\/(?!graphql|legacy|.scss).*/;
 
 module.exports = {
 meta: {
@@ -17,12 +17,9 @@ create(context) {
       const { value } = node.source;
 
       if (specifier.type !== 'ImportDefaultSpecifier') return;
-      if (!value.startsWith('app/')) return;
+      if (!IMPORTS_WHITELIST.test(value)) return
 
       const moduleName = value.slice(value.lastIndexOf("/") + 1);
-
-      if (IGNORED_MODULES.test(moduleName)) return;
-
       const { name } = specifier.local;
 
       if (name !== moduleName) {
