@@ -16,38 +16,38 @@ const getComponentImportVariants = value =>
 const getImportVariants = value =>
   value.includes('components')
     ? getComponentImportVariants(value)
-    : getRegularImportVariants(value)
+    : getRegularImportVariants(value);
 
 module.exports = {
-meta: {
-  docs: {
-    description:
-      'disallow to use a different identifier than the module name.',
+  meta: {
+    docs: {
+      description:
+        'disallow to use a different identifier than the module name.',
+    },
   },
-},
 
-create(context) {
-  return {
-    ImportDeclaration(node) {
-      const [ specifier ] = node.specifiers;
-      if (!specifier) return;
+  create(context) {
+    return {
+      ImportDeclaration(node) {
+        const [ specifier ] = node.specifiers;
+        if (!specifier) return;
 
-      const { value } = node.source;
+        const { value } = node.source;
 
-      if (specifier.type !== 'ImportDefaultSpecifier') return;
-      if (!IMPORTS_WHITELIST.test(value)) return;
+        if (specifier.type !== 'ImportDefaultSpecifier') return;
+        if (!IMPORTS_WHITELIST.test(value)) return;
 
-      const importVariants = getImportVariants(value);
-      const { name } = specifier.local;
+        const importVariants = getImportVariants(value);
+        const { name } = specifier.local;
 
-      if (!importVariants.includes(name)) {
-        context.report({
-          node,
-          message:
-            `Default import "${name}" should be one of the following values: "${importVariants.join(', ')}".`,
-        });
+        if (!importVariants.includes(name)) {
+          context.report({
+            node,
+            message:
+              `Default import "${name}" should be one of the following values: "${importVariants.join(', ')}".`,
+          });
+        }
       }
     }
-  }
-},
+  },
 };
