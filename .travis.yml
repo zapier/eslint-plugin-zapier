@@ -1,11 +1,11 @@
-sudo: false
-dist: trusty
 language: node_js
-cache:
-  directories:
-    - node_modules
-notifications:
-  email: false
 node_js:
   - 'stable'
   - 'lts/*'
+
+cache:
+  directories:
+    - node_modules
+
+notifications:
+  email: false

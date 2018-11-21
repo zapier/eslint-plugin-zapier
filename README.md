@@ -2,6 +2,8 @@
 
 Shareable recommended rule configuration and custom rules for internal Zapier usage.
 
+[![Build Status](https://travis-ci.org/zapier/eslint-plugin-zapier.svg?branch=master)](https://travis-ci.org/zapier/eslint-plugin-zapier)
+
 ## Installation
 
 ```
