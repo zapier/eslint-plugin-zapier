@@ -126,9 +126,10 @@ argparse@^1.0.7:
   dependencies:
     sprintf-js "~1.0.2"
 
-aria-query@^0.7.0:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/aria-query/-/aria-query-0.7.1.tgz#26cbb5aff64144b0a825be1846e0b16cfa00b11e"
+aria-query@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/aria-query/-/aria-query-3.0.0.tgz#65b3fcc1ca1155a8c9ae64d6eee297f15d5133cc"
+  integrity sha1-ZbP8wcoRVajJrmTW7uKX8V1RM8w=
   dependencies:
     ast-types-flow "0.0.7"
     commander "^2.11.0"
@@ -158,13 +159,14 @@ asap@~2.0.3:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
 
-ast-types-flow@0.0.7:
+ast-types-flow@0.0.7, ast-types-flow@^0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/ast-types-flow/-/ast-types-flow-0.0.7.tgz#f70b735c6bca1a5c9c22d982c3e39e7feba3bdad"
 
-axobject-query@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-0.1.0.tgz#62f59dbc59c9f9242759ca349960e7a2fe3c36c0"
+axobject-query@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-2.0.2.tgz#ea187abe5b9002b377f925d8bf7d1c561adf38f9"
+  integrity sha512-MCeek8ZH7hKyO1rWUbKNQBbl4l2eY0ntk7OGi+q0RlafrCnfPxC06WZA+uebCfmYp4mNU9jRBP1AhGyf8+W3ww==
   dependencies:
     ast-types-flow "0.0.7"
 
@@ -304,9 +306,10 @@ cross-spawn@^5.1.0:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
-damerau-levenshtein@^1.0.0:
+damerau-levenshtein@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.4.tgz#03191c432cb6eea168bb77f3a55ffdccb8978514"
+  integrity sha1-AxkcQyy27qFou3fzpV/9zLiXhRQ=
 
 debug@2.2.0:
   version "2.2.0"
@@ -353,9 +356,10 @@ doctrine@^2.0.0, doctrine@^2.1.0:
   dependencies:
     esutils "^2.0.2"
 
-emoji-regex@^6.1.0:
-  version "6.5.1"
-  resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-6.5.1.tgz#9baea929b155565c11ea41c6626eaa65cef992c2"
+emoji-regex@^7.0.2:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-7.0.3.tgz#933a04052860c85e83c122479c4748a8e4c72156"
+  integrity sha512-CwBLREIQ7LvYFB0WyRvwhq5N5qPhc6PMjD6bYggFlI5YyDgl+0vxq5VHbMOFqLg7hfWzmu8T5Z1QofhmTIhItA==
 
 encoding@^0.1.11:
   version "0.1.12"
@@ -397,17 +401,19 @@ eslint-plugin-flowtype@2.35.0:
   dependencies:
     lodash "^4.15.0"
 
-eslint-plugin-jsx-a11y@6.0.2:
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.0.2.tgz#659277a758b036c305a7e4a13057c301cd3be73f"
+eslint-plugin-jsx-a11y@6.2.1:
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.2.1.tgz#4ebba9f339b600ff415ae4166e3e2e008831cf0c"
+  integrity sha512-cjN2ObWrRz0TTw7vEcGQrx+YltMvZoOEx4hWU8eEERDnBIU00OTq7Vr+jA7DFKxiwLNv4tTh5Pq2GUNEa8b6+w==
   dependencies:
-    aria-query "^0.7.0"
+    aria-query "^3.0.0"
     array-includes "^3.0.3"
-    ast-types-flow "0.0.7"
-    axobject-query "^0.1.0"
-    damerau-levenshtein "^1.0.0"
-    emoji-regex "^6.1.0"
-    jsx-ast-utils "^1.4.0"
+    ast-types-flow "^0.0.7"
+    axobject-query "^2.0.2"
+    damerau-levenshtein "^1.0.4"
+    emoji-regex "^7.0.2"
+    has "^1.0.3"
+    jsx-ast-utils "^2.0.1"
 
 eslint-plugin-react@7.3.0:
   version "7.3.0"
@@ -645,6 +651,13 @@ has@^1.0.1:
   dependencies:
     function-bind "^1.0.2"
 
+has@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/has/-/has-1.0.3.tgz#722d7cbfc1f6aa8241f16dd814e011e1f41e8796"
+  integrity sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
+  dependencies:
+    function-bind "^1.1.1"
+
 iconv-lite@^0.4.17, iconv-lite@~0.4.13:
   version "0.4.19"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.19.tgz#f7468f60135f5e5dad3399c0a81be9a1603a082b"
@@ -785,13 +798,10 @@ json3@3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/json3/-/json3-3.3.2.tgz#3c0434743df93e2f5c42aee7b19bcb483575f4e1"
 
-jsx-ast-utils@^1.4.0:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-1.4.1.tgz#3867213e8dd79bf1e8f2300c0cfc1efb182c0df1"
-
-jsx-ast-utils@^2.0.0:
+jsx-ast-utils@^2.0.0, jsx-ast-utils@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-2.0.1.tgz#e801b1b39985e20fffc87b40e3748080e2dcac7f"
+  integrity sha1-6AGxs5mF4g//yHtA43SAgOLcrH8=
   dependencies:
     array-includes "^3.0.3"
 

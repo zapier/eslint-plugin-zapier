@@ -2,23 +2,12 @@ module.exports = {
   'plugins': [
     'jsx-a11y',
   ],
-
+  'extends': [
+    'plugin:jsx-a11y/recommended'
+  ],
   'rules': {
-    'jsx-a11y/alt-text': 'error',
-    'jsx-a11y/aria-role': 'error',
-    'jsx-a11y/interactive-supports-focus': 'error',
-    'jsx-a11y/no-noninteractive-element-interactions': ['error',
-      {
-        'handlers': [
-          'onClick',
-          'onMouseDown',
-          'onMouseUp',
-          'onKeyPress',
-          'onKeyDown',
-          'onKeyUp',
-        ],
-      },
-    ],
-    'jsx-a11y/no-static-element-interactions': 'error',
-  },
+    'jsx-a11y/no-onchange': 'off',
+    'jsx-a11y/no-autofocus': 'off',
+    'jsx-a11y/media-has-caption': 'off',
+  }
 };
