@@ -23,7 +23,7 @@
   "devDependencies": {
     "lodash.difference": "4.4.0",
     "lodash.mapvalues": "^4.6.0",
-    "mocha": "3.0.2",
+    "mocha": "6.0.2",
     "prettier": "1.7.0"
   }
 }
