@@ -1,86 +1,86 @@
 // modules ---------------------------------------------------------------------
 
 // node
-const assert = require('assert');
+const assert = require("assert");
 
 // npm
-const diff = require('lodash.difference');
-const eslint = require('eslint');
+const diff = require("lodash.difference");
+const eslint = require("eslint");
 
 // setup -----------------------------------------------------------------------
 
 const eslintRules = Object.keys(eslint.linter.rules._rules);
-const makeLinter = (config = 'base') =>
+const makeLinter = (config = "base") =>
   new eslint.CLIEngine({
     useEslintrc: false,
-    configFile: `./config/${config}.js`,
+    configFile: `./config/${config}.js`
   });
 
 // cases -----------------------------------------------------------------------
 
-exports['eslint-plugin-zapier'] = {
-  'all eslint rules are configured': () => {
+exports["eslint-plugin-zapier"] = {
+  "all eslint rules are configured": () => {
     const linter = makeLinter();
 
-    const config = linter.getConfigForFile('foo.js');
+    const config = linter.getConfigForFile("foo.js");
 
     assert.deepEqual(diff(eslintRules, Object.keys(config.rules)), []);
   },
 
-  'loads react-speficic rules': () => {
+  "loads react-speficic rules": () => {
     const linter = makeLinter();
-    const config = linter.getConfigForFile('foo.js');
+    const config = linter.getConfigForFile("foo.js");
     const reactRules = Object.keys(config.rules).filter(rule =>
-      rule.startsWith('react')
+      rule.startsWith("react")
     );
 
     assert.ok(reactRules.length > 0);
   },
 
-  'loads a11y-related rules': () => {
+  "loads a11y-related rules": () => {
     const linter = makeLinter();
-    const config = linter.getConfigForFile('foo.js');
+    const config = linter.getConfigForFile("foo.js");
     const a11yRules = Object.keys(config.rules).filter(rule =>
-      rule.startsWith('jsx-a11y')
+      rule.startsWith("jsx-a11y")
     );
 
     assert.ok(a11yRules.length > 0);
   },
 
-  'loads flowtype rules': () => {
+  "loads flowtype rules": () => {
     const linter = makeLinter();
-    const config = linter.getConfigForFile('foo.js');
+    const config = linter.getConfigForFile("foo.js");
 
-    assert(config.parser, 'babel-eslint');
+    assert(config.parser, "babel-eslint");
   },
 
-  'loads custom zapier rules': () => {
+  "loads custom zapier rules": () => {
     const linter = makeLinter();
-    const config = linter.getConfigForFile('foo.js');
+    const config = linter.getConfigForFile("foo.js");
 
     const customRules = Object.keys(config.rules).filter(rule =>
-      rule.startsWith('@zapier/zapier/')
+      rule.startsWith("@zapier/zapier/")
     );
 
     assert.ok(customRules.length > 0);
   },
 
-  'config does not throw': () => {
+  "config does not throw": () => {
     const linter = makeLinter();
 
-    assert.doesNotThrow(() => linter.executeOnText(''));
+    assert.doesNotThrow(() => linter.executeOnText(""));
   },
 
-  'exposes a prettier config': () => {
-    const linter = makeLinter('prettier');
-    const config = linter.getConfigForFile('foo.js');
+  "exposes a prettier config": () => {
+    const linter = makeLinter("prettier");
+    const config = linter.getConfigForFile("foo.js");
 
     assert.ok(Object.keys(config.rules).length > 0);
   },
 
-  'prettier config contains base config': () => {
-    const config = makeLinter('prettier').getConfigForFile('foo.js');
-    const baseConfig = makeLinter('base').getConfigForFile('foo.js');
+  "prettier config contains base config": () => {
+    const config = makeLinter("prettier").getConfigForFile("foo.js");
+    const baseConfig = makeLinter("base").getConfigForFile("foo.js");
 
     assert.deepEqual(
       diff(Object.keys(baseConfig.rules), Object.keys(config.rules)),
@@ -88,13 +88,13 @@ exports['eslint-plugin-zapier'] = {
     );
   },
 
-  'prettier config turns a bunch of rules off': () => {
-    const config = makeLinter('prettier').getConfigForFile('./foo.js');
-    const baseConfig = makeLinter('base').getConfigForFile('./foo.js');
+  "prettier config turns a bunch of rules off": () => {
+    const config = makeLinter("prettier").getConfigForFile("./foo.js");
+    const baseConfig = makeLinter("base").getConfigForFile("./foo.js");
 
     const getDisabledRules = rules =>
       Object.keys(rules).reduce((acc, rule) => {
-        if (rules[rule] === 'off') {
+        if (rules[rule] === "off") {
           return acc.concat(rule);
         }
         return acc;
@@ -105,4 +105,21 @@ exports['eslint-plugin-zapier'] = {
         getDisabledRules(baseConfig.rules).length
     );
   },
+
+  "no-restricted-type disallows create-react-class": () => {
+    const linter = makeLinter();
+
+    const messages = linter.executeOnText(
+      "import createReactClass from 'create-react-class';"
+    );
+
+    const error = messages.results[0].messages.find(
+      m => m.ruleId === "no-restricted-syntax"
+    );
+    assert.ok(error);
+    assert.deepEqual(
+      error.message,
+      "Do not use `create-react-class` use React.Component or a functional component instead."
+    );
+  }
 };
