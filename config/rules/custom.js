@@ -6,7 +6,7 @@ module.exports = {
       {
         selector: "ImportDeclaration[source.value='create-react-class']",
         message:
-          "Do not use `create-react-class` use React.Component or a functional component instead."
+          "Do not use `create-react-class` use React.Component or a functional component instead. https://zapier.quip.com/n73GAO6bVqje/Frontend-Deprecations#aVOACAW3H5S"
       }
     ]
   }
