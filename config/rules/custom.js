@@ -1,6 +1,7 @@
 module.exports = {
   rules: {
     "@zapier/zapier/disallow-lodash-get-dot-notation": "error",
+    '@zapier/zapier/disallow-regexp-lookbehind': 'error',
     "no-restricted-syntax": [
       "error",
       {
