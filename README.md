@@ -1,3 +1,6 @@
+> Moved to https://github.com/zapier/zapier/tree/develop/packages/libraries/eslint-plugin-zapier.
+
+
 # eslint-plugin-zapier
 
 Shareable recommended rule configuration and custom rules for internal Zapier usage.
